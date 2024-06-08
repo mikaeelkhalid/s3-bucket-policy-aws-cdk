@@ -2,7 +2,7 @@
   "name": "s3-bucket-policy-aws-cdk",
   "version": "0.1.0",
   "bin": {
-    "s3-bucket-policy-aws-cdk": "bin/s3-bucket-policy-aws-cdk.js"
+    "app": "bin/app.js"
   },
   "scripts": {
     "build": "tsc",
