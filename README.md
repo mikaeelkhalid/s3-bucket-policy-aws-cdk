@@ -1,14 +1,77 @@
-# Welcome to your CDK TypeScript project
+# S3 Bucket Policy with AWS CDK
 
-This is a blank project for CDK development with TypeScript.
+[![Mikaeel Khalid](https://badgen.now.sh/badge/by/mikaeelkhalid/purple)](https://github.com/mikaeelkhalid)
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This project demonstrates how to create and manage S3 bucket policies using AWS CDK (Cloud Development Kit) in both explicit and implicit ways. The project is structured to provide a clear and reusable approach for defining bucket policies.
 
-## Useful commands
+## Prerequisites
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+Ensure you have the following installed:
+
+- AWS CDK
+- Node.js
+- TypeScript
+
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/mikaeelkhalid/s3-bucket-policy-aws-cdk.git
+    cd s3-bucket-policy-aws-cdk
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+### Explicit Bucket Policy
+
+The explicit approach involves creating a separate `BucketPolicy` resource and attaching it to the S3 bucket.
+
+Code for this can be found in `stacks/s3-bucket-policy-explicit-stack.ts`.
+
+### Implicit Bucket Policy
+
+The implicit approach involves adding the bucket policy directly to the bucket resource.
+
+Code for this can be found in `stacks/s3-bucket-policy-implicit-stack.ts`.
+
+### Deploying the Stacks
+
+1. Bootstrap the CDK environment:
+
+    ```bash
+    cdk bootstrap
+    ```
+
+2. Deploy the implicit stack:
+
+    ```bash
+    cdk deploy S3BucketPolicyImplicitStack
+    ```
+
+3. Deploy the explicit stack:
+
+    ```bash
+    cdk deploy S3BucketPolicyExplicitStack
+    ```
+
+## Cleanup
+
+To delete the stacks and cleanup resources:
+
+```bash
+cdk destroy S3BucketPolicyImplicitStack
+cdk destroy S3BucketPolicyExplicitStack
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
